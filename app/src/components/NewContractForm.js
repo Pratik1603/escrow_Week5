@@ -2,7 +2,7 @@ import { useState, useContext, useReducer } from 'react';
 import { ethers } from 'ethers';
 import { EscrowContext } from '../store/escrow-context';
 import deploy from '../utils/deploy';
-import server from '../utils/server';
+
 
 const initialEscrow = {
         arbiter: '',
@@ -96,7 +96,7 @@ export default function NewContractForm() {
     }
 
     return (
-        <form className="mx-auto border-2 w-[60%] p-4 my-[4%] rounded-2xl bg-[#0c0849]" onSubmit={handleNewContract}>
+        <form className="mx-auto border-2 w-[60%]  p-4 my-[4%] rounded-2xl bg-[#0c0849]" onSubmit={handleNewContract}>
             <h1 className='text-2xl'> New Contract </h1>
             {inputFields.map(input => (
                 <label
@@ -111,8 +111,8 @@ export default function NewContractForm() {
                     <input
                         className={
                             input.isValid || input.isValid == null
-                                ? ''
-                                : 'invalid-border invalid-text'
+                                ? 'text-black'
+                                : 'invalid-border invalid-text text-black'
                         }
                         type='text'
                         id={input.id}
